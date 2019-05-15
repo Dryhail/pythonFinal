@@ -13,3 +13,5 @@ print(games.head());
 print(wellness.head());
 print(rpe.head());
 #print(gps.head());
+
+print(games.columns)
