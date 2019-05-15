@@ -11,7 +11,7 @@ rpe = pd.read_csv('rpe.csv');
 
 print(games.columns)
 print(games.head());
-print(wellnesss.columns)
+print(wellness.columns)
 print(wellness.head());
 print(rpe.columns)
 print(rpe.head());
