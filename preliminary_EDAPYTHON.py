@@ -24,7 +24,7 @@ wellness = pd.read_csv('wellness.csv')
 
 
 # In[23]:
-
+print('this class is wack')
 
 games.head()
 
