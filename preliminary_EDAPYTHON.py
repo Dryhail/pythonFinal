@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import missingno as msno
-import pandas_profiling as pdpf
+
 from pandas import DataFrame
 
 
@@ -18,7 +18,7 @@ from pandas import DataFrame
 
 
 games = pd.read_csv('games.csv')
-gps = pd.read_csv('gps.csv')
+#gps = pd.read_csv('gps.csv')
 rpe = pd.read_csv('rpe.csv')
 wellness = pd.read_csv('wellness.csv')
 
@@ -32,7 +32,7 @@ games.head()
 # In[24]:
 
 
-gps.head()
+#gps.head()
 
 
 # In[25]:
