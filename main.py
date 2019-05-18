@@ -11,4 +11,9 @@ rpe = pd.read_csv('rpe.csv');
 #total count of Nutrition values(Excellent v Okay v Poor)
 #AIM:  plot excellent nutrition and poor nutrition vs.
 print(wellness.Nutrition.value_counts(sort=True))
+
+#checks players who have poor nutrition
 wellness.loc[wellness["Nutrition"] == "Poor"]
+
+#checks all players who have a desire greater or equal to 5, almost all have a good game readiness
+wellness.loc[wellness["Desire"] >= 5]
