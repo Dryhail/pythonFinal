@@ -16,4 +16,4 @@ print(wellness.Nutrition.value_counts(sort=True))
 wellness.loc[wellness["Nutrition"] == "Poor"]
 
 #checks all players who have a desire greater or equal to 5, almost all have a good game readiness
-wellness.loc[wellness["Desire"] >= 5]
+wellness.loc[wellness["Desire"] >= 5].sort_values(by="PlayerID")
