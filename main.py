@@ -9,11 +9,9 @@ rpe = pd.read_csv('rpe.csv');
 #gps = pd.read_csv('gps.csv'); #You need to download this yourself. ver 25mb#
 
 
-print(games.columns)
-print(games.head());
-print(wellness.columns)
-print(wellness.head());
-print(rpe.columns)
-print(rpe.head());
+games_group = games.groupby("Date")
+print(games)
+print(games_group)
 #print(gps.head());
 
+wellness.loc[wellness["Nutrition"] == "Poor"]
