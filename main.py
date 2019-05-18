@@ -17,3 +17,7 @@ print(rpe.columns)
 print(rpe.head());
 #print(gps.head());
 
+#total count of Nutrition values(Excellent v Okay v Poor)
+#AIM:  plot excellent nutrition and poor nutrition vs.
+print(wellness.Nutrition.value_counts(sort=True))
+
