@@ -37,7 +37,7 @@ game_loss.to_csv('game_loss', sep='\t')
 
 
 #data of players we wanna analyze
-wellness_data = wellness.loc[wellness["TrainingReadiness"]>="0"][['Date','PlayerID','Desire','Nutrition']].sort_values("PlayerID")
+wellness_data = wellness.loc[wellness["TrainingReadiness"]>="0"][['Date','PlayerID','Desire','Nutrition','SleepQuality']].sort_values("PlayerID")
 wellness_data.to_csv('wellness_data', sep='\t')
 
 
