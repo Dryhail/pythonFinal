@@ -37,7 +37,7 @@ game_loss.to_csv('game_loss', sep='\t')
 
 
 #data of players we wanna analyze
-wellness_data = wellness.loc[wellness["TrainingReadiness"]>="0"][['Date','PlayerID','Desire','Nutrition','SleepQuality']].sort_values("PlayerID")
+wellness_data = wellness.loc[wellness["TrainingReadiness"]>=0][['Date','PlayerID','Desire','Nutrition','SleepQuality','TrainingReadiness','Fatigue']].sort_values("PlayerID")
 wellness_data.to_csv('wellness_data', sep='\t')
 
 
@@ -46,10 +46,28 @@ wins_merged_data = wellness_data.merge(game_wins).sort_values('GameID')
 wins_merged_data.to_csv('wins_merged_data',sep='\t')
 
 
+
 #games lost with player analysis
 loss_merged_data = wellness_data.merge(game_loss).sort_values('GameID')
 loss_merged_data.to_csv('loss_merged_data',sep='\t')
 
+wins_merged_data.loc[wins_merged_data["GameID"]==1].sort_values("PlayerID")
 
 
+#all of the wins with excellent nutrition to find average
+wins_excellent = wins_merged_data.loc[wins_merged_data["Nutrition"]=="Excellent"]
+wins_excellent.to_csv("wins_excellent",sep='\t')
 
+
+#all of the loss with excellent nutrition to find average
+loss_excellent = loss_merged_data.loc[loss_merged_data["Nutrition"]=="Excellent"]
+loss_excellent.to_csv("loss_excellent",sep='\t')
+count_col = len(loss_excellent.Nutrition)
+print(count_col)
+
+
+wins_mean = wins_merged_data[['Desire','SleepQuality','TrainingReadiness','Fatigue']].mean()
+wins_mean.to_csv('wins_mean',sep='\t')
+
+loss_mean = loss_merged_data[['Desire','SleepQuality','TrainingReadiness','Fatigue']].mean()
+loss_mean.to_csv('loss_mean',sep='\t')
